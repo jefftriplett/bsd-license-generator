@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<form class="form-license" action="/license" method="GET">
+  <input type="text" class="input-block-level" name="organization" placeholder="Organization">
+  <input type="text" class="input-block-level" name="owner" placeholder="Owner">
+
+  <label>License
+  <select class="input-block-level" name="license">
+    <option value="bsd3" selected>BSD 3 Clause (New BSD)
+    <option value="bsd4">BSD 4 Clause (Original, with advertising clause)
+    <option value="mit3">MIT License
+    <option value="mit4">MIT License with "no advertising" clause
+  </select>
+  </label>
+
+  <label>Output
+  <select class="input-block-level" name="output" disabled>
+    <option value="plaintext">Plain text</option>
+    <option value="html">HTML</option>
+    <option value="c">C comment (/* .... */)</option>
+    <option value="cpp">C++ comment (//)</option>
+    <option value="perl">Perl/scripting language comment (#)</option>
+  </select>
+  </label>
+
+  <label>Columns
+  <input type="text" class="input-block-level" name="columns" value="79">
+  </label>
+
+  <button class="btn btn-large btn-primary" type="submit">Submit</button>
+
+  <!--
+  add back once repo is public....
+  <hr>
+  <a href="bsd-license-generator.tar.gz">Source code</a>
+  -->
+
+</form>
+{% endblock contents %}
